@@ -79,6 +79,9 @@ async def generate_human_level_docs(request: DocRequest):
         return result
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+@app.get("/")
+async def root():
+    return {"message": "Repository Documentation API is running"}
 
 if __name__ == "__main__":
     import uvicorn
