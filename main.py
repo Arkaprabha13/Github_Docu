@@ -82,4 +82,15 @@ async def generate_human_level_docs(request: DocRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app)
+    
+    # Get port from environment variable (Render provides this)
+    port = int(os.environ.get("PORT", 8000))
+    
+    # Bind to 0.0.0.0 so Render can detect the port
+    uvicorn.run(
+        app, 
+        host="0.0.0.0",  # ✅ Critical: Bind to all interfaces
+        port=port,       # ✅ Use Render's PORT environment variable
+        # Don't use --reload in production
+    )
+   
