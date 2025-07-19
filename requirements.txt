@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+gitpython
+groq
+markdown-pdf
+faiss-cpu  # or faiss-gpu if you have CUDA
+sentence-transformers
+numpy
+pickle5
+pydantic
