@@ -82,4 +82,4 @@ async def generate_human_level_docs(request: DocRequest):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0")
+    uvicorn.run(app)
